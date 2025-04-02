@@ -6,21 +6,20 @@
 def contraseña ():
     while True:
         try:
-            contraseña= input ("Ingrese una contraseña con al menos un número, al menos 8 caracteres y al menos una letra en mayúscula")
-            if contraseña len(palabras) < 8:
-            print("La contraseña debe tener 8 caracteres")
-
+            contraseña= input ("Ingrese una contraseña con al menos un número, al menos 8 caracteres y al menos una letra en mayúscula : ")
+            if len(contraseña) < 8 :
+                print("la contraseña debe tener 8 o más caracteres")
             elif not any(letra.isdigit() for letra in contraseña):
-            print("la contraseña debe tener la menos 1 letra")
-
-            elif any (letra.issuper() for letra in contraseña):
-            print("la ocntraseña debe tener al menos una letra en Mayusucula")
+                print("la contraseña debe tener la menos 1 letra")
+            
+            elif not any (letra.isupper() for letra in contraseña):
+                print("la contraseña debe tener al menos una letra en Mayusucula")
             
             else:
-            print("contraseña inválida")
-            break
+                print("contraseña valida")
+                break
         except Exception as e:
-        print(f"Error inesperado: {e}")
+            print(f"Error inesperado: {e}")
 
 contraseña ()
 
